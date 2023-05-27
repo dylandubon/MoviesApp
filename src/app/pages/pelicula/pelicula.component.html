@@ -1,0 +1,32 @@
+<h5>DETALLE DE PELICULA</h5>
+<div class="container">
+    <div class="row">
+        <div class="card" style="width: 18rem;">
+
+            <div class="card-body">
+              <h5 class="card-title">{{movie?.title}}</h5>
+              <p class="card-text">{{movie?.overview}}</p>
+              <p class="card-text">{{movie?.tagline}}</p>
+
+            </div>
+           
+            
+          </div>
+    </div>
+</div>
+<br>
+<h5>VIDEOS DE PELICULA:</h5>
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let video of videos">
+      <p>
+        {{video.name}}
+      </p>
+
+      <div class="embed-responsive embed-responsive-16by9">
+        <h5></h5>
+        <iframe class="embed-responsive-item" [src]="video.link | SafeMovie" allowfullscreen></iframe>
+      </div>
+    </ng-container>
+  </div>
+</div>
